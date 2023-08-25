@@ -41,13 +41,26 @@ document.querySelector("#new-form").addEventListener("submit", function (event) 
 //To be able to render the added book to the page
 
 function render() {
-    let libraryBook = document.querySelector("#library");
+    let libraryBook = document.querySelector(".library");
+    libraryBook.innerHTML = "";  //reset the book list and enable more books to be added
+    
 
     for (let i = 0; i < myLibrary.length; i++) {
         let book = myLibrary[i];
         let bookEl = document.createElement("div");
-        bookEl.innerHTML = `<p>${book.title}</p>`
+        bookEl.innerHTML = `
+        
+               <div class="card-body">
+                <div class="card text-center">
+                  <h5 class="card-title">${book.title}</h5>
+                  <h6 class="card-subtitle mb-2 text muted">${book.author}</h5>
+                  <p class="card-text">${book.pages} pages</p>
+                  <p class="read-status">${book.read ? "Read": "Not Read Yet"}</p>
+                </div>
+               </div>
+        `
         libraryBook.appendChild(bookEl);
+        
 
     }
 }
