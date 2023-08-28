@@ -10,4 +10,12 @@
 .container {
 
     margin-top: 30px;
+    border: 0.25px #d4d4d8;
+}
+
+.library{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, minmax(200px, 1fr));
+    gap: 2px;
 }
