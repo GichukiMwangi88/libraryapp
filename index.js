@@ -66,7 +66,7 @@ function render() {
     bookEl.innerHTML = `
         
         <div class="card-body text-center">
-               <div class="card" style="width: 20rem;">
+               <div class="card" style="width: 15rem;">
                   <h5 class="card-title">${book.title}</h5>
                   <h6 class="card-subtitle mb-2 text muted"> by ${
                     book.author

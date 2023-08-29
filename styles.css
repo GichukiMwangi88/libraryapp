@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 .header {
@@ -13,9 +14,13 @@
     border: 0.25px #d4d4d8;
 }
 
+/* Style the added library cards */
 .library{
     display: grid;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-    grid-template-rows: repeat(2, minmax(200px, 1fr));
-    gap: 2px;
+    place-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    grid-template-columns: repeat(3, minmax(150px, 1.5fr));
+    grid-template-rows: repeat(2, minmax(150px, 1.5fr));
+    gap: 4px;
 }
