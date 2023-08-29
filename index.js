@@ -10,9 +10,28 @@ function Book(title, author, pages, read) {
 
 }
 
+//Add toggle read function using the prototype to the Book object
+
+Book.prototype.toggleRead = function() {
+    this.read = !this.read;
+} 
+
+function toggleRead() {
+    myLibrary[index].toggleRead();
+    render();
+}
+
+//Function to remove book from library based on their index
+
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    render();
+}
+
 //Function to add book to the library
 
 function addBookToLibrary() {
+    //DOM Elements
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
     let pages = document.querySelector("#pages").value;
@@ -22,6 +41,7 @@ function addBookToLibrary() {
     render();
 
 }
+// DOM Element to select the new book button
 
 let newBookBtn = document.querySelector("#add-book");
 
@@ -33,7 +53,7 @@ newBookBtn.addEventListener("click", function () {
     bookForm.style.display = "block";
 })
 
-document.querySelector("#new-form").addEventListener("submit", function (event) {
+document.querySelector("#new-form").addEventListener("submit", event => {
     event.preventDefault();
     addBookToLibrary();
 })
@@ -56,12 +76,17 @@ function render() {
                   <h6 class="card-subtitle mb-2 text muted">${book.author}</h5>
                   <p class="card-text">${book.pages} pages</p>
                   <p class="read-status">${book.read ? "Read": "Not Read Yet"}</p>
+                  <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
+                  <button class="toggle-read-btn" onclick="toggleRead(${i})">Toggle Read</button>
                 </div>
                </div>
-        `
+        `;
         libraryBook.appendChild(bookEl);
         
 
     }
 }
+
+
+
 
