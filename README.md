@@ -14,7 +14,7 @@ buttons enable the user to remove a book from the library and change the read st
 - How to override bootstrap by adding a link to your css after 
 the cdn link on the html as demonstrated below;
 
-![html markup screenshot](C:\Users\Gichuki\Desktop\odinProject\libraryProject\libraryapp\Screenshot 2023-08-29 084527.png)
+![](Screenshot 2023-08-29 084527.png)
 
 
 
