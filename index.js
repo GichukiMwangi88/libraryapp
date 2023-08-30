@@ -9,19 +9,6 @@ function Book(title, author, pages, read) {
   this.read = read;
 }
 
-//Add a function to the Book object using the prototype method
-
-Book.prototype.toggleRead = function () {
-  this.read = !this.read;
-};
-
-//Toggle read function that will enable user to change from read
-//to not read on the book display card
-
-function toggleRead(index) {
-  myLibrary[index].toggleRead();
-  render();
-}
 
 //Add toggle read function using the prototype to the Book object
 
@@ -44,7 +31,6 @@ function removeBook(index) {
 //Function to add book to the library
 
 function addBookToLibrary() {
-<<<<<<< HEAD
     //DOM Elements
     let title = document.querySelector("#title").value;
     let author = document.querySelector("#author").value;
@@ -54,16 +40,6 @@ function addBookToLibrary() {
     myLibrary.push(newBook)
     render();
 
-=======
-  //DOM elements to be able to grab the information
-  let title = document.querySelector("#title").value;
-  let author = document.querySelector("#author").value;
-  let pages = document.querySelector("#pages").value;
-  let read = document.querySelector("#read").checked;
-  let newBook = new Book(title, author, pages, read);
-  myLibrary.push(newBook);
-  render();
->>>>>>> 4b14a3757badcf35efd7fa52425170c819ea5d1a
 }
 // DOM Element to select the new book button
 
@@ -77,13 +53,8 @@ newBookBtn.addEventListener("click", function () {
   bookForm.style.display = "block";
 });
 
-<<<<<<< HEAD
-document.querySelector("#new-form").addEventListener("submit", event => {
-=======
-document
-  .querySelector("#new-form")
-  .addEventListener("submit", function (event) {
->>>>>>> 4b14a3757badcf35efd7fa52425170c819ea5d1a
+
+document.querySelector("#new-form").addEventListener("submit", function (event) {
     event.preventDefault();
     addBookToLibrary();
   });
@@ -97,52 +68,24 @@ function render() {
   for (let i = 0; i < myLibrary.length; i++) {
     let book = myLibrary[i];
     let bookEl = document.createElement("div");
-    bookEl.setAttribute("class", "library-card");
+    bookEl.setAttribute("class", "library");
     bookEl.innerHTML = `
         
-        <div class="card-body text-center">
-               <div class="card" style="width: 15rem;">
-                  <h5 class="card-title">${book.title}</h5>
-                  <h6 class="card-subtitle mb-2 text muted"> by ${
-                    book.author
-                  }</h5>
-                  <p class="card-text">${book.pages} pages</p>
-<<<<<<< HEAD
-                  <p class="read-status">${book.read ? "Read": "Not Read Yet"}</p>
-                  <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
-                  <button class="toggle-read-btn" onclick="toggleRead(${i})">Toggle Read</button>
-                </div>
-               </div>
+      <div class="card-body text-center">
+          <div class="card" style="width: 18rem;">
+            <h5 class="card-title">${book.title}</h5>
+            <h6 class="card-subtitle mb-2 text muted"> by ${book.author}</h6>
+            <p class="card-text">${book.pages} pages</p>
+            <p class="read-status">${book.read ? "Read" : "Not Read Yet"}</p>
+            <div class="d-grid gap-2 d-md-block">
+                <button type="button" class="btn btn-danger btn-sm" onclick="removeBook(${i})">Remove</button>
+                <button type="button" class="btn btn-info btn-sm" onclick="toggleRead(${i})">Toggle Read</button>
+            </div>
+          </div>
+      </div>
         `;
         libraryBook.appendChild(bookEl);
         
 
     }
-}
-
-
-
-
-=======
-                  <p class="read-status">${
-                    book.read ? "Read" : "Not Read Yet"
-                  }</p>
-                  <div class="d-grid gap-2 d-md-block">
-                     <button type="button" class="btn btn-danger btn-sm" onclick="removeBook(${i})">Remove</button>
-                     <button type="button" class="btn btn-info btn-sm" onclick="toggleRead(${i})">Toggle Read</button>
-                  </div>
-                  
-                </div>      
-        </div>
-        `;
-    libraryBook.appendChild(bookEl);
-  }
-}
-
-//Function to remove book added to library by index
-
-function removeBook(index) {
-  myLibrary.splice(index, 1);
-  render();
-}
->>>>>>> 4b14a3757badcf35efd7fa52425170c819ea5d1a
+};
