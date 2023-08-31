@@ -16,7 +16,7 @@ Book.prototype.toggleRead = function() {
     this.read = !this.read;
 } 
 
-function toggleRead() {
+function toggleRead(index) {
     myLibrary[index].toggleRead();
     render();
 }
