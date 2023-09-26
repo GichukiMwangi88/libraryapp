@@ -17,10 +17,7 @@
 /* Style the added library cards */
 .library{
     display: grid;
-    place-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    grid-template-columns: repeat(3, minmax(150px, 1.5fr));
-    grid-template-rows: repeat(2, minmax(150px, 1.5fr));
+    margin: 5px 5px 5px 5px;
     gap: 4px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
