@@ -2,11 +2,13 @@
 let myLibrary = [];
 
 //Constructor Book Object that initializes the Book
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
 }
 
 //Add a function to the Book object using the prototype method
